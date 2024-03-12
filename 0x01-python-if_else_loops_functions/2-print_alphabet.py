@@ -1,3 +1,5 @@
 #!/usr/bin/python3
-for item in range(97, 122):
-    print(f"{chr(item)}", end='')
+"""This script is designed to print tha lowercase alphabet."""
+
+for letter in range(97, 123):
+    print("{}".format(chr(letter)), end="")
