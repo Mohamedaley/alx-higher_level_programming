@@ -17,14 +17,10 @@ int check_cycle(listint_t *list)
 	{
 		if (fast == slow)
 		{
-			fast = NULL;
-			slow = NULL;
 			return (1);
 		}
 		slow = slow->next;
 		fast = fast->next->next;
 	}
-	fast = NULL;
-	slow = NULL;
 	return (0);
 }
