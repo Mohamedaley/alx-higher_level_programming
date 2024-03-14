@@ -1,26 +1,20 @@
 #include "lists.h"
-
 /**
- * insert_node - A function to instert a node in specific place
- * @head: the head pointer
- * @number: the data stored
- * Return: address of new node
+ * insert_node - A function to instert a node in specific place.
+ * Developed by Mohamed Ali
+ * @head: the head pointer.
+ * @number: the data stored.
+ * Return: address of new node.
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *ptr = NULL, *temp = NULL;
-	listint_t *new = NULL;
+	listint_t *ptr = NULL, *temp = NULL, *new = NULL;
 
-
-	ptr = *head;
-	temp = *head;
-
+	ptr = *head, temp = *head;
 	new = malloc(sizeof(listint_t));
 	if (!new)
 		return (NULL);
-	new->next = NULL;
-	new->n = number;
-
+	new->next = NULL, new->n = number;
 	if (!(*head))
 	{
 		*head = new;
@@ -38,8 +32,7 @@ listint_t *insert_node(listint_t **head, int number)
 	ptr = ptr->next;
 	if (ptr->n > number)
 	{
-		temp->next = new;
-		new->next = ptr;
+		temp->next = new, new->next = ptr;
 	}
 	while (ptr)
 	{
@@ -53,8 +46,6 @@ listint_t *insert_node(listint_t **head, int number)
 		temp = temp->next;
 	}
 	if (ptr == NULL)
-	{
 		temp->next = new;
-	}
 	return (new);
 }
