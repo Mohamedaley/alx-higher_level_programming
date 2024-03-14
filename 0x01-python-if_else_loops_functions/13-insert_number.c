@@ -1,4 +1,5 @@
 #include "lists.h"
+
 /**
  * insert_node - A function to instert a node in specific place
  * @head: the head pointer
@@ -10,8 +11,6 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *ptr = NULL, *temp = NULL;
 	listint_t *new = NULL;
 
-	if (!(*head))
-		return (NULL);
 
 	ptr = *head;
 	temp = *head;
@@ -22,6 +21,13 @@ listint_t *insert_node(listint_t **head, int number)
 	new->next = NULL;
 	new->n = number;
 
+	if (!(*head))
+	{
+		*head = new;
+		temp = NULL;
+		ptr = NULL;
+		return (new);
+	}
 	if (temp->n > number)
 	{
 		new->next = temp;
