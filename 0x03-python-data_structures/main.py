@@ -1,6 +1,9 @@
-#!/usr/bin/env python3
-no_c = __import__('5-no_c').no_c
-
-print(no_c("Best School"))
-print(no_c("Chicago"))
-print(no_c("C is fun!"))
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+for row in matrix:
+    for item in row:
+        print("{:d}".format(item), end=" ")
+    print()
