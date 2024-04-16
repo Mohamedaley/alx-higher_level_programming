@@ -4,5 +4,5 @@ import json
 
 
 def from_json_string(my_str):
-    """ Serializing an object and returns it (JSON Representation)"""
+    """ deserializing an object and returns it (JSON Representation)"""
     return json.loads(my_str)
